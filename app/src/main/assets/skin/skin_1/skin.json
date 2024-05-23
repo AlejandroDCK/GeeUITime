@@ -1,0 +1,68 @@
+{
+  "origRect": {
+    "left": 0,
+    "top": 0,
+    "right": 480,
+    "bottom": 480
+  },
+  "digitTimes": [
+    {
+      "align": 1,
+      "dataFormat": "HH:mm",
+      "filePrefix": "time_numbers_",
+      "origRect": {
+        "left": 0,
+        "top": 194,
+        "right": 480,
+        "bottom": 294
+      },
+      "fileSpace": 10
+    }
+  ],
+  "labelTimes": [
+    {
+      "align": 0,
+      "dataFormat": "yyyy/MM/dd",
+      "origRect": {
+        "left": 112,
+        "top": 145,
+        "right": 289,
+        "bottom": 178
+      },
+      "color": 16777215,
+      "origSize": 30
+    },
+    {
+      "align": 0,
+      "dataFormat": "EEE",
+      "origRect": {
+        "left": 306,
+        "top": 145,
+        "right": 362,
+        "bottom": 178
+      },
+      "color": 16777215,
+      "origSize": 30
+    }
+  ],
+  "weather": {
+    "origRect": {
+      "left": 163,
+      "top": 309,
+      "right": 200,
+      "bottom": 345
+    },
+    "filePrefix": "wea"
+  },
+  "temperatureDes": {
+    "align": 1,
+    "origRect": {
+      "left": 202,
+      "top": 313,
+      "right": 310,
+      "bottom": 358
+    },
+    "color": 16777215,
+    "origSize": 26
+  }
+}

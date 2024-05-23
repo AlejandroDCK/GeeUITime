@@ -1,0 +1,90 @@
+{
+  "origRect": {
+    "left": 0,
+    "top": 0,
+    "right": 480,
+    "bottom": 480
+  },
+  "digitTimes": [
+    {
+      "align": 1,
+      "dataFormat": "hh",
+      "filePrefix": "time_numbers_",
+      "origRect": {
+        "left": 270,
+        "top": 116,
+        "right": 390,
+        "bottom": 188
+      },
+      "fileSpace": 2
+    },
+    {
+      "align": 1,
+      "dataFormat": "mm",
+      "filePrefix": "time_numbers_",
+      "origRect": {
+        "left": 270,
+        "top": 208,
+        "right": 390,
+        "bottom": 280
+      },
+      "fileSpace": 2
+    }
+  ],
+  "labelTimes": [
+    {
+      "align": 0,
+      "dataFormat": "MM/dd",
+      "origRect": {
+        "left": 270,
+        "top": 355,
+        "right": 390,
+        "bottom": 381
+      },
+      "color": 16777215,
+      "origSize": 25
+    },
+    {
+      "align": 2,
+      "dataFormat": "EEE",
+      "origRect": {
+        "left": 270,
+        "top": 355,
+        "right": 390,
+        "bottom": 381
+      },
+      "color": 16777215,
+      "origSize": 25
+    }
+  ],
+  "middle": {
+    "align": 0,
+    "filePrefix": "shuiping_",
+    "origRect": {
+      "left": 30,
+      "top": 50,
+      "right": 350,
+      "bottom": 296
+    }
+  },
+  "weather": {
+    "origRect": {
+      "left": 270,
+      "top": 304,
+      "right": 307,
+      "bottom": 338
+    },
+    "filePrefix": "wea"
+  },
+  "temperatureDes": {
+    "align": 0,
+    "origRect": {
+      "left": 315,
+      "top": 310,
+      "right": 417,
+      "bottom": 337
+    },
+    "color": 16777215,
+    "origSize": 26
+  }
+}

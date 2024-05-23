@@ -1,0 +1,93 @@
+{
+  "origRect": {
+    "left": 0,
+    "top": 0,
+    "right": 480,
+    "bottom": 480
+  },
+  "digitTimes": [
+    {
+      "align": 1,
+      "dataFormat": "hh",
+      "filePrefix": "time_numbers_",
+      "origRect": {
+        "left": 82,
+        "top": 70,
+        "right": 398,
+        "bottom": 228
+      },
+      "fileSpace": 0
+    },
+    {
+      "align": 1,
+      "dataFormat": "mm",
+      "filePrefix": "time_numbers_minute_",
+      "origRect": {
+        "left": 60,
+        "top": 280,
+        "right": 398,
+        "bottom": 416
+      },
+      "fileSpace": 0
+    }
+  ],
+  "weather": {
+    "origRect": {
+      "left": 302,
+      "top": 204,
+      "right": 342,
+      "bottom": 252
+    },
+    "filePrefix": "wea"
+  },
+  "temperatureDes": {
+    "align": 1,
+    "origRect": {
+      "left": 0,
+      "top": 242,
+      "right": 480,
+      "bottom": 270
+    },
+    "color": 16777215,
+    "origSize": 26
+  },
+  "labelTimes": [
+    {
+      "align": 1,
+      "dataFormat": "MM-dd",
+      "origRect": {
+        "left": 0,
+        "top": 210,
+        "right": 480,
+        "bottom": 233
+      },
+      "color": 16777215,
+      "origSize": 28
+    },
+    {
+      "align": 0,
+      "dataFormat": "EEE",
+      "origRect": {
+        "left": 130,
+        "top": 210,
+        "right": 206,
+        "bottom": 233
+      },
+      "color": 16777215,
+      "origSize": 28
+    },
+    {
+      "align": 0,
+      "dataFormat": "a",
+      "languageFormat": "c",
+      "origRect": {
+        "left": 263,
+        "top": 185,
+        "right": 346,
+        "bottom": 218
+      },
+      "color": 16777215,
+      "origSize": 33
+    }
+  ]
+}

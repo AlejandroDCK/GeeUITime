@@ -1,0 +1,62 @@
+{
+  "origRect": {
+    "left": 0,
+    "top": 0,
+    "right": 320,
+    "bottom": 320
+  },
+  "labelTimes": [
+    {
+      "align": 0,
+      "dataFormat": "yyyy.MM.dd",
+      "origRect": {
+        "left": 142,
+        "top": 224,
+        "right": 235,
+        "bottom": 243
+      },
+      "color": 16777215,
+      "origSize": 18
+    },
+    {
+      "align": 0,
+      "dataFormat": "EEE",
+      "origRect": {
+        "left": 88,
+        "top": 224,
+        "right": 129,
+        "bottom": 243
+      },
+      "color": 16777215,
+      "origSize": 18
+    }
+  ],
+  "analogTimes": [
+    {
+      "filePrefix": "time_",
+      "origRect": {
+        "left": 0,
+        "top": 0,
+        "right": 320,
+        "bottom": 320
+      },
+      "origHourAnchor": {
+        "x": 11,
+        "y": 101
+      },
+      "origMinuteAnchor": {
+        "x": 11,
+        "y": 139
+      }
+    }
+  ],
+  "foreground": {
+    "align": 0,
+    "origRect": {
+      "left": 145,
+      "top": 145,
+      "right": 175,
+      "bottom": 175
+    }
+  }
+}

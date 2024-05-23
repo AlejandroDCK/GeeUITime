@@ -1,0 +1,23 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "GeeUITime"
+include ':app'
+include ':displayview'
+include ':CommChannel'
+include ':Components'
+project(':CommChannel').projectDir = new File('GeeUIComponents/CommChannel')
+project(':Components').projectDir = new File('GeeUIComponents/Components')
+include ':CommandLib'
+project(':CommandLib').projectDir = new File('GeeUIBase/CommandLib')

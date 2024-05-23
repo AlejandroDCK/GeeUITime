@@ -1,0 +1,196 @@
+{
+  "origRect": {
+    "left": 0,
+    "top": 0,
+    "right": 360,
+    "bottom": 400
+  },
+  "digitTimes": [
+    [
+      {
+        "align": 1,
+        "dataFormat": "hh",
+        "filePrefix": "time_numbers_",
+        "origRect": {
+          "left": 220,
+          "top": 116,
+          "right": 340,
+          "bottom": 188
+        },
+        "fileSpace": 2
+      },
+      {
+        "align": 1,
+        "dataFormat": "mm",
+        "filePrefix": "time_numbers_",
+        "origRect": {
+          "left": 220,
+          "top": 198,
+          "right": 340,
+          "bottom": 270
+        },
+        "fileSpace": 2
+      }
+    ]
+  ],
+  "labelTimes": [
+    [
+      {
+        "align": 0,
+        "dataFormat": "MM/dd",
+        "origRect": {
+          "left": 220,
+          "top": 360,
+          "right": 340,
+          "bottom": 209
+        },
+        "color": 16777215,
+        "origSize": 25
+      },
+      {
+        "align": 2,
+        "dataFormat": "EEE",
+        "origRect": {
+          "left": 220,
+          "top": 360,
+          "right": 340,
+          "bottom": 386
+        },
+        "color": 16777215,
+        "origSize": 25
+      }
+    ]
+  ],
+  "middle": [
+    {
+      "align": 0,
+      "filePrefix": "baiyang_",
+      "origRect": {
+        "left": 0,
+        "top": 40,
+        "right": 320,
+        "bottom": 286
+      }
+    },
+    {
+      "align": 0,
+      "filePrefix": "jinniu_",
+      "origRect": {
+        "left": 0,
+        "top": 40,
+        "right": 320,
+        "bottom": 286
+      }
+    },
+    {
+      "align": 0,
+      "filePrefix": "shuangzi_",
+      "origRect": {
+        "left": 0,
+        "top": 40,
+        "right": 320,
+        "bottom": 286
+      }
+    },
+    {
+      "align": 0,
+      "filePrefix": "juxie_",
+      "origRect": {
+        "left": 0,
+        "top": 40,
+        "right": 320,
+        "bottom": 286
+      }
+    },
+    {
+      "align": 0,
+      "filePrefix": "shizi_",
+      "origRect": {
+        "left": 0,
+        "top": 40,
+        "right": 320,
+        "bottom": 286
+      }
+    },
+    {
+      "align": 0,
+      "filePrefix": "chunv_",
+      "origRect": {
+        "left": 0,
+        "top": 40,
+        "right": 320,
+        "bottom": 286
+      }
+    },
+    {
+      "align": 0,
+      "filePrefix": "tianping_",
+      "origRect": {
+        "left": 0,
+        "top": 40,
+        "right": 320,
+        "bottom": 286
+      }
+    },
+    {
+      "align": 0,
+      "filePrefix": "tianxie_",
+      "origRect": {
+        "left": 0,
+        "top": 40,
+        "right": 320,
+        "bottom": 286
+      }
+    },
+    {
+      "align": 0,
+      "filePrefix": "sheshou_",
+      "origRect": {
+        "left": 0,
+        "top": 40,
+        "right": 320,
+        "bottom": 286
+      }
+    },
+    {
+      "align": 0,
+      "filePrefix": "mojie_",
+      "origRect": {
+        "left": 0,
+        "top": 40,
+        "right": 320,
+        "bottom": 286
+      }
+    },
+    {
+      "align": 0,
+      "filePrefix": "shuiping_",
+      "origRect": {
+        "left": 0,
+        "top": 40,
+        "right": 320,
+        "bottom": 286
+      }
+    },
+    {
+      "align": 0,
+      "filePrefix": "shuangyu_",
+      "origRect": {
+        "left": 0,
+        "top": 40,
+        "right": 320,
+        "bottom": 286
+      }
+    }
+  ],
+  "background": [
+    {
+      "origRect": {
+        "left": 0,
+        "top": 0,
+        "right": 360,
+        "bottom": 400
+      }
+    }
+  ]
+}

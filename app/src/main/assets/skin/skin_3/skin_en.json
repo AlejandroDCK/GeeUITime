@@ -1,0 +1,81 @@
+{
+  "origRect": {
+    "left": 0,
+    "top": 0,
+    "right": 480,
+    "bottom": 480
+  },
+  "labelTimes": [
+    {
+      "align": 2,
+      "dataFormat": "yyyy/MM/dd",
+      "origRect": {
+        "left": 136,
+        "top": 119,
+        "right": 311,
+        "bottom": 150
+      },
+      "color": 16777215,
+      "origSize": 32
+    },
+    {
+      "align": 2,
+      "dataFormat": "EEE",
+      "origRect": {
+        "left": 257,
+        "top": 78,
+        "right": 311,
+        "bottom": 131
+      },
+      "color": 16777215,
+      "origSize": 32
+    }
+  ],
+  "digitTimes": [
+    {
+      "align": 2,
+      "dataFormat": "hh",
+      "filePrefix": "time_numbers_",
+      "origRect": {
+        "left": 190,
+        "top": 201,
+        "right": 308,
+        "bottom": 287
+      },
+      "fileSpace": 1
+    },
+    {
+      "align": 2,
+      "dataFormat": "mm",
+      "filePrefix": "time_numbers_",
+      "origRect": {
+        "left": 190,
+        "top": 297,
+        "right": 308,
+        "bottom": 381
+      },
+      "fileSpace": 1
+    }
+  ],
+
+  "weather": {
+    "origRect": {
+      "left": 159,
+      "top": 78,
+      "right": 199,
+      "bottom": 109
+    },
+    "filePrefix": "wea"
+  },
+  "temperatureDes": {
+    "align": 2,
+    "origRect": {
+      "left": 197,
+      "top": 162,
+      "right": 311,
+      "bottom": 180
+    },
+    "color": 16777215,
+    "origSize": 26
+  }
+}

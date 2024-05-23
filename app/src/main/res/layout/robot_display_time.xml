@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_4">
+
+    <com.letianpai.robot.components.view.ImageBgView
+        android:id="@+id/imageBgView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></com.letianpai.robot.components.view.ImageBgView>
+
+    <com.renhejia.robot.display.SpineSkinView
+        android:id="@+id/robotClockView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></com.renhejia.robot.display.SpineSkinView>
+
+</RelativeLayout>
+
+
+
