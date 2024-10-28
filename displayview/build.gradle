@@ -1,14 +1,15 @@
 plugins {
     id 'com.android.library'
+    id 'org.jetbrains.kotlin.android' version('2.0.21')
 }
 
 android {
     namespace 'com.renhejia.robot.display'
-    compileSdk 27
+    compileSdk 34
 
     defaultConfig {
-        minSdk 21
-        targetSdk 27
+        minSdk 26
+        targetSdk 34
 
         consumerProguardFiles "consumer-rules.pro"
     }
@@ -23,9 +24,13 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
 }
 
 dependencies {
     api "com.google.code.gson:gson:2.8.6"
+    implementation 'androidx.core:core-ktx:1.13.1'
 //    api project(':CommandLib')
 }
