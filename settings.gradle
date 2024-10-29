@@ -17,7 +17,7 @@ include ':app'
 include ':displayview'
 include ':CommChannel'
 include ':Components'
-project(':CommChannel').projectDir = new File('GeeUIComponents/CommChannel')
-project(':Components').projectDir = new File('GeeUIComponents/Components')
+project(':CommChannel').projectDir = new File('../GeeUIComponents/CommChannel')
+project(':Components').projectDir = new File('../GeeUIComponents/Components')
 include ':CommandLib'
-project(':CommandLib').projectDir = new File('GeeUIBase/CommandLib')
+project(':CommandLib').projectDir = new File('../GeeUIBase/CommandLib')
