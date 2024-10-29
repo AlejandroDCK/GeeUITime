@@ -1,5 +1,5 @@
 [submodule "GeeUIComponents"]
-	path = GeeUIComponets
+	path = GeeUIComponents
 	url = git@github.com:AlejandroDCK/GeeUIComponents.git
 [submodule "GeeUIBase"]
 	path = GeeUIBase
