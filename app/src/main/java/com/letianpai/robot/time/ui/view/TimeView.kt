@@ -172,9 +172,9 @@ class TimeView : LinearLayout {
         ) {
             return
         }
-        RobotPlatformState.getInstance(mContext).weatherState = generalInfo.data!!.wea_img!!.toInt()
-        RobotPlatformState.getInstance(mContext).weatherStateStr = generalInfo.data!!.wea
-        RobotPlatformState.getInstance(mContext).currentTemp = generalInfo.data!!.tem!!.toInt()
+        RobotPlatformState.getInstance(mContext)!!.setWeatherState(generalInfo.data!!.wea_img!!.toInt())
+        RobotPlatformState.getInstance(mContext)!!.setWeatherStateStr(generalInfo.data!!.wea)
+        RobotPlatformState.getInstance(mContext)!!.setCurrentTemp(generalInfo.data!!.tem!!.toInt()) 
         loadSkin()
     }
 
@@ -211,11 +211,11 @@ class TimeView : LinearLayout {
 
     private fun loadCustomSkin() {
 //        Log.e("letianpai_skin","skinName: "+skinName );
-        skinName = RobotClockConfigManager.getInstance(mContext).customSkinName
+        skinName = RobotClockConfigManager.getInstance(mContext)!!.customSkinName
         if (TextUtils.isEmpty(skinName)) {
             spineSkinView!!.loadSkin(skinList[0])
         } else {
-            spineSkinView!!.loadSkin(skinName)
+            spineSkinView!!.loadSkin(skinName!!)
         }
     }
 
@@ -276,22 +276,22 @@ class TimeView : LinearLayout {
 
     private fun addTimeFormatChangeListeners() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-            mContext!!.contentResolver.registerContentObserver(
+            mContext.contentResolver.registerContentObserver(
                 Settings.System.CONTENT_URI,
                 true,
                 object : ContentObserver(Handler()) {
                     override fun onChange(selfChange: Boolean) {
                         super.onChange(selfChange)
                         if (Settings.System.getString(
-                                mContext!!.contentResolver,
+                                mContext.contentResolver,
                                 Settings.System.TIME_12_24
                             ) == "24"
                         ) {
                             // 时间格式为24小时制
-                            spineSkinView!!.is12HourFormat = false
+                            spineSkinView!!.set12HourFormat(false)
                         } else {
                             // 时间格式为12小时制
-                            spineSkinView!!.is12HourFormat = true
+                            spineSkinView!!.set12HourFormat(true)
                         }
                         loadSkin()
                     }
@@ -321,12 +321,12 @@ class TimeView : LinearLayout {
     }
 
     private fun updateCustomBackground() {
-        if (RobotClockConfigManager.getInstance(mContext).IsShowCustomBg() && !TextUtils.isEmpty(
-                RobotClockConfigManager.getInstance(mContext).customBgUrl
+        if (RobotClockConfigManager.getInstance(mContext)!!.IsShowCustomBg() && !TextUtils.isEmpty(
+                RobotClockConfigManager.getInstance(mContext)!!.customBgUrl
             )
         ) {
             imageBgView!!.visibility = VISIBLE
-            imageBgView!!.updateBackground(RobotClockConfigManager.getInstance(mContext).customBgUrl)
+            imageBgView!!.updateBackground(RobotClockConfigManager.getInstance(mContext)!!.customBgUrl)
         } else {
             imageBgView!!.visibility = GONE
         }
@@ -340,14 +340,14 @@ class TimeView : LinearLayout {
         val config = message.obj as CustomWatchConfig
         if (config != null) {
             if (!TextUtils.isEmpty(config.custom_bg_url)) {
-                RobotClockConfigManager.getInstance(mContext).customBgUrl = config.custom_bg_url
+                RobotClockConfigManager.getInstance(mContext)!!.customBgUrl = config.custom_bg_url
             }
-            RobotClockConfigManager.getInstance(mContext).setShowRandomBg(config.is_random)
-            RobotClockConfigManager.getInstance(mContext).setShowDate(config.is_date)
-            RobotClockConfigManager.getInstance(mContext).setShowWeather(config.is_weather)
-            RobotClockConfigManager.getInstance(mContext).setShowCustomBg(config.is_custom)
-            RobotClockConfigManager.getInstance(mContext).customBgUrl = config.custom_bg_url
-            RobotClockConfigManager.getInstance(mContext).customSkinName =
+            RobotClockConfigManager.getInstance(mContext)!!.setShowRandomBg(config.is_random)
+            RobotClockConfigManager.getInstance(mContext)!!.setShowDate(config.is_date)
+            RobotClockConfigManager.getInstance(mContext)!!.setShowWeather(config.is_weather)
+            RobotClockConfigManager.getInstance(mContext)!!.setShowCustomBg(config.is_custom)
+            RobotClockConfigManager.getInstance(mContext)!!.customBgUrl = config.custom_bg_url
+            RobotClockConfigManager.getInstance(mContext)!!.customSkinName =
                 SKIN_PATH + config.bg_id
 
             //            Log.e("letianpai","updateAllViews_2.1:_config.getCustom_bg_url(): "+ config.getCustom_bg_url());
@@ -357,7 +357,7 @@ class TimeView : LinearLayout {
 //            Log.e("letianpai","updateAllViews_6:_config.getIs_custom(): "+ config.getIs_custom());
 //            Log.e("letianpai","updateAllViews_7:_config.getCustom_bg_url(): "+ config.getCustom_bg_url());
 //            Log.e("letianpai","updateAllViews_8:_config.SKIN_PATH + config.getBg_id(): "+ SKIN_PATH + config.getBg_id());
-            RobotClockConfigManager.getInstance(mContext).commit()
+            RobotClockConfigManager.getInstance(mContext)!!.commit()
         }
 
         loadSkin()
@@ -371,7 +371,7 @@ class TimeView : LinearLayout {
             bgIndex = 0
         }
 
-        if (isUpdateBackground && RobotClockConfigManager.getInstance(mContext).IsShowRandomBg()) {
+        if (isUpdateBackground && RobotClockConfigManager.getInstance(mContext)!!.IsShowRandomBg()) {
             llRoot!!.background = bgList[bgIndex]
         }
         delayUpdateBackground()
