@@ -1,8 +1,21 @@
-# Letianpai—Robot
+# GeeUITime
 
-show time and other info
+**GeeUITime** Libreria para gestionar el tiempo en el robot
 
+## Características
 
+**Net**: Clase que organiza solicitudes de red con la interfaz de usuario y el reloj en el robot
+**TimeService**: Clase que sincroniza la configuración de tiempo y reloj del dispositivo y gestiona personalizaciones visuales del reloj
+**Storage**: Clases que gestionan el almacenamiento de las preferencias del robot, especialmente relacionadas con el tiempo
+**Timer**: Clases que detectan cambios del tiempo en el sistema y se lo comunica a un callback que a su vez lo notifica a los componentes de los listeners para mantenerlos actualizados
+**UI**: Vistas para mostrar widgets relacionados con el tiempo
+**Util**: Funciones de utilidad para utilizar en todo el repositorio
+
+## Instalación
+
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/AlejandroDCK/GeeUITime
 
 ### Contribute
 
