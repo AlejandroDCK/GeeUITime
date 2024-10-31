@@ -2,10 +2,9 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../GeeUIBase" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../GeeUIComponents" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/GeeUIBase" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/GeeUIComponents" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/GeeUIComponents/GeeUITime" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/GeeUIComponents/GeeUITime/GeeUIBase" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/GeeUIComponents/GeeUITime/GeeUIComponets" vcs="Git" />
   </component>
 </project>
