@@ -146,9 +146,9 @@ class GeeUINetResponseManager private constructor(context: Context) {
                             if (generalInfo != null) {
 //                            LogUtils.logi("letianpai_1234567", "generalInfo: " + generalInfo.toString());
                                 if (generalInfo.data != null && generalInfo.data!!.temTag != null) {
-                                    RobotClockConfigManager.getInstance(mContext).tempMode =
+                                    RobotClockConfigManager.getInstance(mContext)!!.tempMode =
                                         generalInfo.data!!.temTag
-                                    RobotClockConfigManager.getInstance(mContext).commit()
+                                    RobotClockConfigManager.getInstance(mContext)!!.commit()
                                 }
                                 GeneralInfoCallback.instance
                                     .setGeneralInfo(generalInfo)
@@ -180,13 +180,13 @@ class GeeUINetResponseManager private constructor(context: Context) {
                             gson.fromJson<CustomClockInfo>(info, CustomClockInfo::class.java)
                         if (customClockInfo != null && customClockInfo.data != null) {
                             if (!TextUtils.isEmpty(customClockInfo.data!!.custom_bg_url)) {
-                                RobotClockConfigManager.getInstance(mContext)
-                                    .setCustomBgUrl(customClockInfo.data!!.custom_bg_url)
-                                RobotClockConfigManager.getInstance(mContext).commit()
-                                CustomClockViewUpdateCallback.Companion.instance
+                                RobotClockConfigManager.getInstance(mContext)!!
+                                    .customBgUrl = (customClockInfo.data!!.custom_bg_url)
+                                RobotClockConfigManager.getInstance(mContext)!!.commit()
+                                CustomClockViewUpdateCallback.instance
                                     .setCustomClockInfo(customClockInfo.data!!)
                             }
-                            CustomClockViewUpdateCallback.Companion.instance
+                            CustomClockViewUpdateCallback.instance
                                 .setCustomClockInfo(customClockInfo.data!!)
                         }
                         //                        generalInfo = new Gson().fromJson(info, GeneralInfo.class);

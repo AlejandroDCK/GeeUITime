@@ -1,14 +1,9 @@
-package com.letianpai.robot.time.storage.manager
+package com.renhejia.robot.display.manager
 
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 
-/**
- * 偏好设置基类
- *
- * @author liujunbin
- */
 class RobotSharedPreference(context: Context?, fileName: String?, action: String?) {
     private var mContext: Context? = null
     private var mFileName: String? = null
@@ -22,7 +17,7 @@ class RobotSharedPreference(context: Context?, fileName: String?, action: String
     /**
      * sharedpreference对于的资源id,默认-1
      */
-    private var mMode = Context.MODE_PRIVATE or Context.MODE_MULTI_PROCESS
+    private var mMode: Int = Context.MODE_PRIVATE or Context.MODE_MULTI_PROCESS
 
     /**
      * 内存数据的map
@@ -30,11 +25,10 @@ class RobotSharedPreference(context: Context?, fileName: String?, action: String
     private var mMap: MutableMap<String, Any?>? = null
 
     /**
-     * Indicates whether the memory data has been changed or not, to avoid unnecessary write file operations
+     * 表示内存数据是否发生过改变，避免不必要的写文件操作
      */
-    private var mHasChanged = false
+    private var mHasChanged: Boolean = false
 
-    //	private Handler mHandler = null;
     init {
         mContext = context
 
@@ -42,23 +36,11 @@ class RobotSharedPreference(context: Context?, fileName: String?, action: String
 
         this.mFileName = fileName
         reloadSharedPref(false)
-
-        //		mHandler = new Handler() {
-//			@Override
-//			public void handleMessage(Message msg) {
-//				if(msg != null) {
-//					switch(msg.what) {
-//					case HANDLE_SETTING_CHANGED :
-////						sendSettingChangeBroadcast();
-//						break;
-//					}
-//				}
-//			}
-//		};
     }
 
+
     /**
-     * File operations, reloading configuration text
+     * File manipulation, reloading configuration files
      *
      * @param syncIPCFlag
      * true will notify all processes to reload, otherwise only the calling process will be loaded.
@@ -72,35 +54,37 @@ class RobotSharedPreference(context: Context?, fileName: String?, action: String
 
         if (syncIPCFlag) {
             //sendIPCSyncBroadcast();
-
             sendSettingChangeBroadcast()
         }
     }
 
     private fun sendSettingChangeBroadcast() {
-        val intent = Intent(ACTION_INTENT_CONFIG_CHANGE)
+        val intent: Intent = Intent(ACTION_INTENT_CONFIG_CHANGE)
         mContext!!.sendBroadcast(intent)
     }
 
+    private fun sendMessageDelay(handleid: Int, delay: Long) {
+//		if(mHandler != null) {
+//			mHandler.removeMessages(handleid);
+//			mHandler.sendEmptyMessageDelayed(handleid, delay);
+//		}
+    }
 
-    //	private void sendMessageDelay(int handleid, long delay) {
-    //		if(mHandler != null) {
-    //			mHandler.removeMessages(handleid);
-    //			mHandler.sendEmptyMessageDelayed(handleid, delay);
-    //		}
-    //	}
+
     fun reloadMap() {
         if (mMap != null) {
             mMap!!.clear()
         }
-        mMap = mSharedPref!!.all as MutableMap<String, Any?>
+        mMap = mSharedPref!!.getAll() as MutableMap<String, Any?>?
     }
 
     val map: Map<String, Any?>?
-        get() = this.mMap
+        get() {
+            return this.mMap
+        }
 
     /**
-     * Memory operations, freeing objects, cancelling broadcasts, clearing memory data
+     * 内存操作，释放对象占用的资源，取消广播，清空内存数据
      */
     fun terminate() {
         try {
@@ -114,7 +98,7 @@ class RobotSharedPreference(context: Context?, fileName: String?, action: String
     }
 
     /**
-     * Determine if a Map contains the specified key
+     * 判断Map中是否包含指定key
      *
      *
      * @param key
@@ -179,7 +163,7 @@ class RobotSharedPreference(context: Context?, fileName: String?, action: String
      * @return boolean true成功，false失败
      */
     private fun setValue(key: String, defValue: Any): Boolean {
-        val preValue = mMap!!.put(key, defValue)
+        val preValue: Any? = mMap!!.put(key, defValue)
         if (preValue == null || preValue != defValue) {
             mHasChanged = true
             return true
@@ -260,8 +244,8 @@ class RobotSharedPreference(context: Context?, fileName: String?, action: String
      * @return boolean
      */
     fun getBoolean(key: String, defValue: Boolean): Boolean {
-        val v = mMap!![key] as Boolean?
-        return v ?: defValue
+        val v: Boolean? = mMap!!.get(key) as Boolean?
+        return if (v != null) v else defValue
     }
 
     /**
@@ -273,8 +257,8 @@ class RobotSharedPreference(context: Context?, fileName: String?, action: String
      * @return float
      */
     fun getFloat(key: String, defValue: Float): Float {
-        val v = mMap!![key] as Float?
-        return v ?: defValue
+        val v: Float? = mMap!!.get(key) as Float?
+        return if (v != null) v else defValue
     }
 
     /**
@@ -286,8 +270,8 @@ class RobotSharedPreference(context: Context?, fileName: String?, action: String
      * @return int
      */
     fun getInt(key: String, defValue: Int): Int {
-        val v = mMap!![key] as Int?
-        return v ?: defValue
+        val v: Int? = mMap!!.get(key) as Int?
+        return if (v != null) v else defValue
     }
 
     /**
@@ -299,8 +283,8 @@ class RobotSharedPreference(context: Context?, fileName: String?, action: String
      * @return long
      */
     fun getLong(key: String, defValue: Long): Long {
-        val v = mMap!![key] as Long?
-        return v ?: defValue
+        val v: Long? = mMap!!.get(key) as Long?
+        return if (v != null) v else defValue
     }
 
     /**
@@ -312,8 +296,8 @@ class RobotSharedPreference(context: Context?, fileName: String?, action: String
      * @return String
      */
     fun getString(key: String, defValue: String?): String {
-        val v = mMap!![key] as String?
-        return v ?: defValue!!
+        val v: String? = mMap!!.get(key) as String?
+        return if (v != null) v else defValue!!
     }
 
     companion object {
@@ -322,12 +306,13 @@ class RobotSharedPreference(context: Context?, fileName: String?, action: String
         /**
          * 广播相关
          */
-        const val ACTION_INTENT_CONFIG_CHANGE: String = "com.renhejia.robot.SETTING_CHANGE"
+        const val ACTION_INTENT_CONFIG_CHANGE: String = "com.letianpai.robot.SETTING_CHANGE"
 
+        //	private static final String BROADCAST_PID = "broadcastPid";
+        //	private static final String UPDATE_TYPE = "updateType";
+        const val SHARE_PREFERENCE_NAME: String = "WatchConfig"
 
-        const val SHARE_PREFERENCE_NAME: String = "RobotConfig"
-
-        private const val HANDLE_SETTING_CHANGED = 10
+        private const val HANDLE_SETTING_CHANGED: Int = 10
         private const val DELAY_SEND_BROADCAST: Long = 200
     }
 }

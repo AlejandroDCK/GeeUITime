@@ -186,9 +186,9 @@ class MainActivity : AppCompatActivity() {
          * @param context
          */
         fun setTimeZone(context: Context) {
-            if (!TextUtils.isEmpty(RobotClockConfigManager.getInstance(context).timeZone)) {
+            if (!TextUtils.isEmpty(RobotClockConfigManager.getInstance(context)!!.timeZone)) {
                 (context.getSystemService(ALARM_SERVICE) as AlarmManager).setTimeZone(
-                    RobotClockConfigManager.getInstance(context).timeZone
+                    RobotClockConfigManager.getInstance(context)!!.timeZone
                 )
             }
         }

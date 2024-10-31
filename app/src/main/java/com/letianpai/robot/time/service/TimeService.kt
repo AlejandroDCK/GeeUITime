@@ -136,21 +136,21 @@ class TimeService : Service() {
         val config: CustomWatchConfig =
             gson!!.fromJson<CustomWatchConfig>(data, CustomWatchConfig::class.java)
         if (!TextUtils.isEmpty(config.custom_bg_url)) {
-            RobotClockConfigManager.getInstance(mContext)
-                .setCustomBgUrl(config.custom_bg_url)
+            RobotClockConfigManager.getInstance(mContext)!!
+                .customBgUrl = (config.custom_bg_url)
         }
 
-        RobotClockConfigManager.getInstance(mContext).setShowRandomBg(config.is_random)
-        RobotClockConfigManager.getInstance(mContext).setShowDate(config.is_date)
-        RobotClockConfigManager.getInstance(mContext).setShowWeather(config.is_weather)
-        RobotClockConfigManager.getInstance(mContext).setShowCustomBg(config.is_custom)
-        RobotClockConfigManager.getInstance(mContext).setCustomBgUrl(config.custom_bg_url)
-        RobotClockConfigManager.getInstance(mContext)
-            .setCustomSkinName(SKIN_PATH + config.bg_id)
-        RobotClockConfigManager.getInstance(mContext).commit()
+        RobotClockConfigManager.getInstance(mContext)!!.setShowRandomBg(config.is_random)
+        RobotClockConfigManager.getInstance(mContext)!!.setShowDate(config.is_date)
+        RobotClockConfigManager.getInstance(mContext)!!.setShowWeather(config.is_weather)
+        RobotClockConfigManager.getInstance(mContext)!!.setShowCustomBg(config.is_custom)
+        RobotClockConfigManager.getInstance(mContext)!!.customBgUrl = (config.custom_bg_url)
+        RobotClockConfigManager.getInstance(mContext)!!
+            .customSkinName = (SKIN_PATH + config.bg_id)
+        RobotClockConfigManager.getInstance(mContext)!!.commit()
         updateClockView(config)
 
-        // TODO 1.保存更新状态
+        // TODO 1.Save Update Status
 //        if (config != null && !TextUtils.isEmpty(config.getCustom_bg_url())){
 //            ((AlarmManager) mContext.getSystemService(Context.ALARM_SERVICE)).setTimeZone(timeZone.getZone());
 //            updateTime();
@@ -166,8 +166,8 @@ class TimeService : Service() {
         val timeZone = gson!!.fromJson(data, TimeZone::class.java)
         if (timeZone != null && !TextUtils.isEmpty(timeZone.zone)) {
             (mContext.getSystemService(ALARM_SERVICE) as AlarmManager).setTimeZone(timeZone.zone)
-            RobotClockConfigManager.getInstance(mContext).timeZone = timeZone.zone
-            RobotClockConfigManager.getInstance(mContext).commit()
+            RobotClockConfigManager.getInstance(mContext)!!.timeZone = timeZone.zone
+            RobotClockConfigManager.getInstance(mContext)!!.commit()
             updateTime()
         }
     }
